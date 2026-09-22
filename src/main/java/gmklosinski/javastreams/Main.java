@@ -1,13 +1,18 @@
 package gmklosinski.javastreams;
 
-import edu.stanford.nlp.simple.Sentence;
+import edu.stanford.nlp.simple.Document;
 
 public class Main {
     static void main() {
-        var sentence = new Sentence("I like volleyball!");
+        var document = new Document("""
+                Roses are red.
+                Violets are blue.
+                """
+        );
 
-        var volleyballPosTag = sentence.posTag(2);
-
-        IO.println("Volleyball is " + volleyballPosTag);
+        for (var sentence : document.sentences()) {
+            IO.println(sentence);
+            IO.println("POS tags: " + sentence.posTags());
+        }
     }
 }
