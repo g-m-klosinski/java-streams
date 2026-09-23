@@ -8,9 +8,13 @@ public class Main {
     static void main() throws IOException {
         var document = new Document(new String(System.in.readAllBytes()));
 
-        for (var sentence : document.sentences()) {
-            IO.println(sentence);
-            IO.println("POS tags: " + sentence.posTags());
-        }
+        var firstWord = getFirstWord(document);
+
+        IO.println(firstWord);
+    }
+
+    private static String getFirstWord(Document document) {
+        var firstWord = document.sentences().get(0).words().get(0);
+        return firstWord;
     }
 }
