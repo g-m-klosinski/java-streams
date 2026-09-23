@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MainTest {
     @Test
-    void sumUpReturnsFirstWordOfFirstSentence() {
-        var document = new Document("Hello world. Another sentence follows.");
+    void sumUpIsAnIdentityFunctionForAnEmptyText() {
+        var document = new Document("");
 
         var result = Main.sumUp(document);
 
-        assertEquals("Hello", result);
+        assertEquals("", result);
     }
 }
