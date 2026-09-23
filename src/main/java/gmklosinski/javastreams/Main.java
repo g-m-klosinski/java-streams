@@ -13,7 +13,7 @@ public class Main {
         IO.println(summary);
     }
 
-    private static String sumUp(Document document) {
+    static String sumUp(Document document) {
         return document.sentences().getFirst().words().getFirst();
     }
 }
