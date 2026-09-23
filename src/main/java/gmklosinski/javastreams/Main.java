@@ -14,6 +14,10 @@ public class Main {
     }
 
     static String sumUp(Document document) {
+        if (document.sentences().isEmpty()) {
+            return "";
+        }
+
         return document.sentences().getFirst().words().getFirst();
     }
 }
