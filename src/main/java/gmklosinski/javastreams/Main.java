@@ -2,13 +2,11 @@ package gmklosinski.javastreams;
 
 import edu.stanford.nlp.simple.Document;
 
+import java.io.IOException;
+
 public class Main {
-    static void main() {
-        var document = new Document("""
-                Roses are red.
-                Violets are blue.
-                """
-        );
+    static void main() throws IOException {
+        var document = new Document(new String(System.in.readAllBytes()));
 
         for (var sentence : document.sentences()) {
             IO.println(sentence);
