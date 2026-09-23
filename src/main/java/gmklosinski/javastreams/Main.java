@@ -14,7 +14,6 @@ public class Main {
     }
 
     private static String getFirstWord(Document document) {
-        var firstWord = document.sentences().get(0).words().get(0);
-        return firstWord;
+        return document.sentences().getFirst().words().getFirst();
     }
 }
