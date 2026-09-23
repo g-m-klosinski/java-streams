@@ -18,6 +18,6 @@ public class Main {
             return "";
         }
 
-        return document.sentences().getFirst().words().getFirst();
+        return "summary";
     }
 }
