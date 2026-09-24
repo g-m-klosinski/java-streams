@@ -18,6 +18,6 @@ public class Main {
             return "";
         }
 
-        return "summary";
+        return "dog";
     }
 }
