@@ -14,4 +14,13 @@ class MainTest {
 
         assertEquals("", result);
     }
+
+    @Test
+    void sumUpKeepsTheOnlyWordIfItIsNoun() {
+        var document = new Document("dog");
+
+        var result = Main.sumUp(document);
+
+        assertEquals("dog", result);
+    }
 }
