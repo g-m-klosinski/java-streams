@@ -26,7 +26,7 @@ class MainTest {
 
     @Test
     void sumUpRemovesTheOnlyWordIfItIsVerb() {
-        var document = new Document("run");
+        var document = new Document("persuade");
 
         var result = Main.sumUp(document);
 
