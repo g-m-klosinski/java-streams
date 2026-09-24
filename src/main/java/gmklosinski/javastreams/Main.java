@@ -1,8 +1,11 @@
 package gmklosinski.javastreams;
 
 import edu.stanford.nlp.simple.Document;
+import edu.stanford.nlp.simple.Sentence;
 
 import java.io.IOException;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Main {
     static void main() throws IOException {
@@ -18,6 +21,16 @@ public class Main {
             return "";
         }
 
-        return "dog";
+        var nouns = document.sentences().stream()
+                .flatMap(Main::sentenceNouns)
+                .toList();
+
+        return String.join(" ", nouns);
+    }
+
+    static Stream<String> sentenceNouns(Sentence sentence) {
+        return IntStream.range(0, sentence.words().size())
+                .filter(i -> sentence.posTag(i).startsWith("NN"))
+                .mapToObj(sentence::word);
     }
 }
