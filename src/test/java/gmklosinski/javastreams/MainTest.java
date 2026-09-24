@@ -23,4 +23,13 @@ class MainTest {
 
         assertEquals("dog", result);
     }
+
+    @Test
+    void sumUpRemovesTheOnlyWordIfItIsVerb() {
+        var document = new Document("run");
+
+        var result = Main.sumUp(document);
+
+        assertEquals("", result);
+    }
 }
