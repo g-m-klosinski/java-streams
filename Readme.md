@@ -4,7 +4,7 @@
 
 *A sandbox created for practical testing of Streams API in Java 25.*
 
-A tool that summarizes text.
+A tool that summarizes text by extracting nouns.
 
 ## Quick Start
 
