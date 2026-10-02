@@ -67,4 +67,16 @@ class MainTest {
 
         assertEquals("", result);
     }
+
+    @Test
+    void sumUpExtractNounsFromAPoem() {
+        var document = new Document("""
+                Roses are red.
+                Violets are blue.
+                """);
+
+        var result = Main.sumUp(document);
+
+        assertEquals("Roses Violets", result);
+    }
 }
